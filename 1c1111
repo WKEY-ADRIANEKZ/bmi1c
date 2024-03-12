@@ -1,0 +1,47 @@
+<body> 
+    
+    Waga (kg)<br>
+    <input type="number" id="kg" />
+   <br><br>
+   
+    Wzrost (cm)<br>
+    <input type="number" id="cm" />
+    <br><br>       
+    
+    <input type="submit" value="Wskaźnik BMI" onclick="liczxy()" /><br />&nbsp; 
+    <div id="wynik">WYNIK</div>
+    <script>
+            
+        function liczxy()
+        {
+            
+            var x = document.getElementById("kg").value;
+            var y = document.getElementById("cm").value;
+
+            var BMI = (x/(y*y)*10000);
+           
+
+            if (BMI<18.5){
+                document.getElementById("wynik").innerHTML = BMI;
+                //"Niedowaga"
+            }
+            
+            else if ((18.5<=BMI) && (BMI<=24.9)){
+                document.getElementById("wynik").innerHTML = BMI;
+                //"Prawidłowa waga"
+            }
+            
+            else if ((25<=BMI) && (BMI<=29.9)){
+                document.getElementById("wynik").innerHTML = BMI;
+                //"Nadwaga"
+            }
+            
+            else if (BMI>30){
+                document.getElementById("wynik").innerHTML = BMI;      
+                //"Otyłość"
+            }
+            
+        }  
+
+</script>
+</body>
